@@ -2,7 +2,7 @@ services:
   - type: web
     name: mes-do-cliente-campanha
     runtime: node
-    plan: free
+    plan: starter
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -10,7 +10,7 @@ services:
         value: 22
       - key: DB_PATH
         value: /var/data/mes-do-cliente.db
-    disks:
-      - name: mes-do-cliente-disk
-        mountPath: /var/data
-        sizeGB: 1
+    disk:
+      name: mes-do-cliente-disk
+      mountPath: /var/data
+      sizeGB: 1
